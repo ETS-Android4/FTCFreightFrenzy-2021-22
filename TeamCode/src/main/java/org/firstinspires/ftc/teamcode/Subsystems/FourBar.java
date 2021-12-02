@@ -14,9 +14,7 @@ public abstract class FourBar extends Subsystem {
 
         // Hardware Map
         motor = hm.get(DcMotorEx.class, "FourBar");
-
-
-
+        motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
     }
 
     public static void up() {
@@ -26,7 +24,4 @@ public abstract class FourBar extends Subsystem {
     public static void down() {
         motor.setPower(-power);
     }
-
-
-
 }
