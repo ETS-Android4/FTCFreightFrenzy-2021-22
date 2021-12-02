@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.Utility;
 
 public abstract class Constants {
 
+<<<<<<< HEAD
     // Motor Constants
     public static final double YELLOWJACKET_5202_MAX_RPM = 5400; // tested value
     public static final double NEVEREST_ORBITAL_20_TICKS_PER_REV = 537.6;
@@ -13,4 +14,10 @@ public abstract class Constants {
     {
 
     }
+=======
+    public static boolean clawQueued = false;
+    //Gamepad I
+
+
+>>>>>>> bd414c870039391a010dced731ebab2e1c8b9af1
 }
