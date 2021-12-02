@@ -47,9 +47,7 @@ public class Qual2 extends LinearOpMode{
             Drivetrain.backLeft.setPower(blpow);
             Drivetrain.backRight.setPower(brpow);
 
-            /* FourBar LT and RT
-
-             */
+            /* FourBar LT and RT  */
             if(gamepad1.left_trigger>=0.5) {
                 FourBar.up();
             }
@@ -57,24 +55,19 @@ public class Qual2 extends LinearOpMode{
                 FourBar.down();
             }
 
-            if (gamepad1.a) {
-
-                Claw.isOpen = !Claw.isOpen;
-                Claw.openClaw();
+            // Claw - A button
+            if (gamepad1.a && !Constants.clawQueued)
+                Constants.clawQueued = true;
+            else if (!gamepad1.a && Constants.clawQueued) {
+                Constants.clawQueued = false;
+                if (!Claw.isOpen) {
+                    Claw.openClaw();
+                }
+                else {
+                    Claw.closeClaw();
+                }
             }
 
-/*
-            //intake code on dpad1
-            if (gamepad1.dpad_right){
-                Intake.setPower(1);
-            }
-            if (gamepad1.dpad_left){
-                Intake.setPower(-1);
-            }
-            if (gamepad1.dpad_down){
-                Intake.setPower(0);
-            }
-            */
 
         }
     }
