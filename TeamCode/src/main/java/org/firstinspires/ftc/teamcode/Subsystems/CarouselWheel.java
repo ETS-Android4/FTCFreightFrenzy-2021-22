@@ -14,6 +14,4 @@ public abstract class CarouselWheel extends Subsystem {
     public static void setPower(double pow){
         carouselMotor.setPower(pow);
     }
-
-
 }

@@ -23,8 +23,6 @@ public class Qual2 extends LinearOpMode{
 
 
         while (opModeIsActive()) {
-
-
             ly = -gamepad1.left_stick_y;
             lx = gamepad1.left_stick_x;
             rx = gamepad1.right_stick_x;
@@ -67,8 +65,6 @@ public class Qual2 extends LinearOpMode{
                     Claw.closeClaw();
                 }
             }
-
-
         }
     }
 }
