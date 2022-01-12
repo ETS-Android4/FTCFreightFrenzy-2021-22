@@ -1,4 +1,4 @@
-/*package org.firstinspires.ftc.teamcode.OpModes;
+package org.firstinspires.ftc.teamcode.OpModes;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
@@ -6,7 +6,7 @@ import org.firstinspires.ftc.teamcode.Utility.*;
 import org.firstinspires.ftc.teamcode.Subsystems.*;
 
 @TeleOp(name = "Qual2: TeleOp")
-public class Qual2 extends LinearOpMode{
+public class Qual3 extends LinearOpMode{
 
     double ly, lx, rx, flpow, frpow, blpow, brpow, max;
 
@@ -14,10 +14,10 @@ public class Qual2 extends LinearOpMode{
     public void runOpMode() {
 
         Subsystem.initialize(hardwareMap, telemetry);
-        // Intake.initialize();
         Drivetrain.initialize();
-        Claw.initialize();
+        Intake.initialize();
         LinearSlides.initialize();
+        CarouselWheel.initialize();
 
         waitForStart();
 
@@ -45,28 +45,27 @@ public class Qual2 extends LinearOpMode{
             Drivetrain.backLeft.setPower(blpow);
             Drivetrain.backRight.setPower(brpow);
 
-            /* FourBar LT and RT  */
-/*
-            if(gamepad1.left_trigger>=0.5) {
-                LinearSlides.up();
+            /* LinearSlides LT and RT  */
+            if(gamepad1.left_trigger>=0.1) {
+                LinearSlides.up(gamepad1.left_trigger);
             }
-            if(gamepad1.right_trigger>=0.5){
-                LinearSlides.down();
+            else if(gamepad1.right_trigger>=0.1){
+                LinearSlides.down(gamepad1.right_trigger);
             }
+            else LinearSlides.up(0);
 
-            // Claw - A button
-            if (gamepad1.a && !Constants.clawQueued)
-                Constants.clawQueued = true;
-            else if (!gamepad1.a && Constants.clawQueued) {
-                Constants.clawQueued = false;
-                if (!Claw.isOpen) {
-                    Claw.openClaw();
-                }
-                else {
-                    Claw.closeClaw();
-                }
+
+
+            // intake
+            if (gamepad1.a){
+                Intake.setPower(1);
+            }
+            else if (gamepad1.b) {
+                Intake.setPower(-1);
+            }
+            else {
+                Intake.setPower(0);
             }
         }
     }
 }
-*/

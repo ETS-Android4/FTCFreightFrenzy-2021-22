@@ -12,6 +12,6 @@ public abstract class Constants {
     {
 
     }
-    public static boolean clawQueued = false;
+    public static boolean intakeQueued = false;
     //Gamepad I
 }
