@@ -1,3 +1,12 @@
+/**
+ *
+ * CHANGES TO MAKE:
+ * - drive is way too sensitive
+ * - intake faster
+ * - carousel wheel not working
+ */
+
+
 package org.firstinspires.ftc.teamcode.OpModes;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -16,7 +25,7 @@ public class Qual3 extends LinearOpMode{
         Subsystem.initialize(hardwareMap, telemetry);
         Drivetrain.initialize();
         Intake.initialize();
-        LinearSlides.initialize();
+        //LinearSlides.initialize();
         CarouselWheel.initialize();
 
         waitForStart();
@@ -46,6 +55,7 @@ public class Qual3 extends LinearOpMode{
             Drivetrain.backRight.setPower(brpow);
 
             /* LinearSlides LT and RT  */
+            /*
             if(gamepad1.left_trigger>=0.1) {
                 LinearSlides.up(gamepad1.left_trigger);
             }
@@ -53,6 +63,7 @@ public class Qual3 extends LinearOpMode{
                 LinearSlides.down(gamepad1.right_trigger);
             }
             else LinearSlides.up(0);
+            */
 
 
 
@@ -65,6 +76,14 @@ public class Qual3 extends LinearOpMode{
             }
             else {
                 Intake.setPower(0);
+            }
+
+            // Carousel Wheel
+            if (gamepad1.x){
+                CarouselWheel.setPower(1);
+            }
+            else {
+                CarouselWheel.setPower(0);
             }
         }
     }

@@ -38,7 +38,7 @@ public abstract class Drivetrain extends Subsystem {
         backRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
     }
 
-    public static void driveForward(int direction, double power, double inches) {
+    public static void driveForward(double power, double inches) {
 
         // 1. Convert inches to ticks
         int target = (int) (inches * TICKS_PER_INCH);
