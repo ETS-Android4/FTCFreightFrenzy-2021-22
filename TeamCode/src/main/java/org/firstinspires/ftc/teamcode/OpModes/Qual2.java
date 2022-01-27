@@ -1,4 +1,7 @@
-/*package org.firstinspires.ftc.teamcode.OpModes;
+/* DO NOT USE - OUTDATED */
+
+/*
+package org.firstinspires.ftc.teamcode.OpModes;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
@@ -69,4 +72,5 @@ public class Qual2 extends LinearOpMode{
         }
     }
 }
-*/
+
+ */

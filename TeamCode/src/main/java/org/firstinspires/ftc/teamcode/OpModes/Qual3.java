@@ -1,11 +1,8 @@
-/**
- *
- * CHANGES TO MAKE:
+/** CHANGES TO MAKE:
  * - drive is way too sensitive
  * - intake faster
  * - carousel wheel not working
  */
-
 
 package org.firstinspires.ftc.teamcode.OpModes;
 
@@ -14,24 +11,28 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import org.firstinspires.ftc.teamcode.Utility.*;
 import org.firstinspires.ftc.teamcode.Subsystems.*;
 
-@TeleOp(name = "Qual2: TeleOp")
-public class Qual3 extends LinearOpMode{
+@TeleOp(name = "Qual3: TeleOp")
+public class Qual3 extends LinearOpMode {
 
     double ly, lx, rx, flpow, frpow, blpow, brpow, max;
 
     @Override
     public void runOpMode() {
 
+        /* INITIALIZATION */
         Subsystem.initialize(hardwareMap, telemetry);
         Drivetrain.initialize();
         Intake.initialize();
         //LinearSlides.initialize();
         CarouselWheel.initialize();
 
+        /* WAIT FOR START BUTTON PRESSED */
         waitForStart();
 
-
+        /* MAIN TELEOP LOOP */
         while (opModeIsActive()) {
+
+            /* DRIVETRAIN CODE - JOYSTICKS */
             ly = -gamepad1.left_stick_y;
             lx = gamepad1.left_stick_x;
             rx = gamepad1.right_stick_x;
@@ -54,7 +55,7 @@ public class Qual3 extends LinearOpMode{
             Drivetrain.backLeft.setPower(blpow);
             Drivetrain.backRight.setPower(brpow);
 
-            /* LinearSlides LT and RT  */
+            /* LINEAR SLIDES - LEFT AND RIGHT TRIGGERS */
             /*
             if(gamepad1.left_trigger>=0.1) {
                 LinearSlides.up(gamepad1.left_trigger);
@@ -65,9 +66,7 @@ public class Qual3 extends LinearOpMode{
             else LinearSlides.up(0);
             */
 
-
-
-            // intake
+            /* INTAKE - A & B BUTTONS */
             if (gamepad1.a){
                 Intake.setPower(1);
             }
@@ -78,13 +77,15 @@ public class Qual3 extends LinearOpMode{
                 Intake.setPower(0);
             }
 
-            // Carousel Wheel
+            /* CAROUSEL WHEEL - X BUTTON */
             if (gamepad1.x){
                 CarouselWheel.setPower(1);
             }
             else {
                 CarouselWheel.setPower(0);
             }
+
+            /* END TELEOP LOOP */
         }
     }
 }
