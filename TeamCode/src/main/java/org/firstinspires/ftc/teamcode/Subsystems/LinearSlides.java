@@ -15,8 +15,8 @@ public abstract class LinearSlides extends Subsystem {
     public static void initialize() {
 
         // Hardware Map
-        leftMotor = hm.get(DcMotorEx.class, "LinearSlides");
-        rightMotor = hm.get(DcMotorEx.class, "LinearSlides");
+        leftMotor = hm.get(DcMotorEx.class, "LLS");
+        rightMotor = hm.get(DcMotorEx.class, "RLS");
         leftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         rightMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
     }

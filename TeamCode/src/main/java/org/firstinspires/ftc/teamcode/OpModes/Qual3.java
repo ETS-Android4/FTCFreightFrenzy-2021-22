@@ -23,7 +23,7 @@ public class Qual3 extends LinearOpMode {
         Subsystem.initialize(hardwareMap, telemetry);
         Drivetrain.initialize();
         Intake.initialize();
-        //LinearSlides.initialize();
+        LinearSlides.initialize();
         CarouselWheel.initialize();
 
         /* WAIT FOR START BUTTON PRESSED */
@@ -33,9 +33,9 @@ public class Qual3 extends LinearOpMode {
         while (opModeIsActive()) {
 
             /* DRIVETRAIN CODE - JOYSTICKS */
-            ly = -gamepad1.left_stick_y;
-            lx = gamepad1.left_stick_x;
-            rx = gamepad1.right_stick_x;
+            ly = gamepad1.left_stick_y  ;
+            lx = gamepad1.left_stick_x  ;
+            rx = gamepad1.right_stick_x ;
 
             flpow = ly + lx + rx;
             frpow = ly - lx - rx;
@@ -56,7 +56,6 @@ public class Qual3 extends LinearOpMode {
             Drivetrain.backRight.setPower(brpow);
 
             /* LINEAR SLIDES - LEFT AND RIGHT TRIGGERS */
-            /*
             if(gamepad1.left_trigger>=0.1) {
                 LinearSlides.up(gamepad1.left_trigger);
             }
@@ -64,7 +63,6 @@ public class Qual3 extends LinearOpMode {
                 LinearSlides.down(gamepad1.right_trigger);
             }
             else LinearSlides.up(0);
-            */
 
             /* INTAKE - A & B BUTTONS */
             if (gamepad1.a){
