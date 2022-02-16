@@ -5,9 +5,9 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import org.firstinspires.ftc.teamcode.Subsystems.*;
 import org.firstinspires.ftc.teamcode.Utility.Subsystem;
 
-// TODO: Rename this autonomous mode; which side does the robot start on for this one?
-@Autonomous(name = "Red Park - ____ Side")
-public class RedAuto1 extends LinearOpMode {
+
+@Autonomous(name = "Red Park - Left Side")
+public class RedAutoLeft extends LinearOpMode {
 
     @Override
     public void runOpMode() {
